@@ -1,8 +1,9 @@
 pipeline {
-    agent any
-    stage (build the image){
-       step {
-             sh "sudo docker build . -t airportapp:latest"
-}
-}
-}
+  agent any
+  stages {
+    stage('---clean---') {
+      steps { 
+        sh "sudo docker build . -t airportapp:latest"
+      }
+    }
+  }
